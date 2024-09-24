@@ -1,0 +1,49 @@
+# Gradle files
+.gradle/
+build/
+local.properties
+
+# Android Studio specific files
+.idea/
+*.iml
+*.hprof
+
+# Gradle caches
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.properties
+
+# Log, Android Studio generated files, and miscellaneous
+*.log
+*.apk
+*.ap_
+*.db
+*.cxx
+*.class
+*.jar
+*.war
+*.ear
+*.swp
+.DS_Store
+
+# Generated binary files by Android Studio
+*.apk
+*.dex
+
+# Mac specific files
+*.DS_Store
+
+# Android specific files
+/captures/
+/output.json
+
+# Ignore Android Test files
+/tests/
+
+# Ignore other miscellaneous system files
+*.keystore
+.idea/workspace.xml
+.idea/libraries
+.idea/modules.xml
+.idea/.name
+.idea/vcs.xml
