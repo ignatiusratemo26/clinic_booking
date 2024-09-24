@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
 
         // RecyclerView setup
         val doctorsList = listOf(
-            Doctor("Dr. Hamza Tariq", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.9, "$12"),
-            Doctor("Dr. Alina Fatima", "Senior Surgeon", "10:30 AM - 3:30 PM", 5.0, "$12"),
-            Doctor("Dr. Hamza Tariq", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.9, "$12"),
-            Doctor("Dr. Alina Fatima", "Senior Surgeon", "10:30 AM - 3:30 PM", 5.0, "$12"),
-            Doctor("Dr. Hamza Tariq", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.9, "$12"),
-            Doctor("Dr. Alina Fatima", "Senior Surgeon", "10:30 AM - 3:30 PM", 5.0, "$12")
+            Doctor("Dr. Ochieng Oloo", "Surgeon", "10:30 AM - 3:30 PM", 4.9, "Ksh 1500"),
+            Doctor("Dr. Gwen Amanda", "Physiologist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1200"),
+            Doctor("Dr. Mjumbe Carlton", "Dentist", "10:30 AM - 3:30 PM", 4.5, "Ksh 1200"),
+            Doctor("Dr. Fedha Santana", "Orthopedic", "10:30 AM - 3:30 PM", 5.0, "Ksh 1700"),
+            Doctor("Dr. Ratemo Ernest", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.4, "Ksh 1000"),
+            Doctor("Dr. Alina Abdi", "Nutritionist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1300")
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
