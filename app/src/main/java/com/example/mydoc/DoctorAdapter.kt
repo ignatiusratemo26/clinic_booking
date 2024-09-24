@@ -1,13 +1,14 @@
 package com.example.mydoc
 
-
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DoctorAdapter(private val doctors: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
+class DoctorAdapter(private val context: Context,private val doctors: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
 
     class DoctorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.doctor_name)
@@ -29,6 +30,17 @@ class DoctorAdapter(private val doctors: List<Doctor>) : RecyclerView.Adapter<Do
         holder.timingTextView.text = doctor.timing
         holder.ratingTextView.text = doctor.rating.toString()
         holder.feeTextView.text = doctor.fee
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DoctorDetailActivity::class.java).apply {
+                putExtra("DOCTOR_NAME", doctor.name)
+                putExtra("DOCTOR_SPECIALIZATION", doctor.specialization)
+                putExtra("DOCTOR_TIMING", doctor.timing)
+                putExtra("DOCTOR_RATING", doctor.rating)
+                putExtra("DOCTOR_FEE", doctor.fee)
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = doctors.size
