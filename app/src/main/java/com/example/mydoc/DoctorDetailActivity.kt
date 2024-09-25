@@ -13,7 +13,7 @@ class DoctorDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        supportActionBar?.hide()
         enableEdgeToEdge()
         setContentView(R.layout.activity_doctor_detail)
 
@@ -28,19 +28,20 @@ class DoctorDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 //        Data from Intent
+        val doctorImage = intent.getIntExtra("DOCTOR_IMAGE", R.drawable.ic_profile_placeholder)
         val doctorName = intent.getStringExtra("DOCTOR_NAME")
         val doctorSpecialization = intent.getStringExtra("DOCTOR_SPECIALIZATION")
         val doctorTiming = intent.getStringExtra("DOCTOR_TIMING")
-        val doctorRating = intent.getFloatExtra("DOCTOR_RATING", 0.0f)
+        val doctorRating = intent.getDoubleExtra("DOCTOR_RATING", 0.0)
         val doctorFee = intent.getStringExtra("DOCTOR_FEE")
 
 //        seting the data to TextViews
-        binding.doctorImage.setImageResource(R.drawable.ic_profile_placeholder)
+        binding.doctorImage.setImageResource(doctorImage)
         binding.doctorName.text = doctorName
         binding.doctorSpecialization.text = doctorSpecialization
-//        binding.doctorTiming.text = doctorTiming
+        binding.doctorTiming.text = doctorTiming
         binding.doctorRating.text = doctorRating.toString()
-//        binding.doctorFee.text = doctorFee
+        binding.doctorFee.text = doctorFee
 
 
     }

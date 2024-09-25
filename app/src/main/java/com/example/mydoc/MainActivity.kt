@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,12 +42,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
-        // Set up RecyclerView for top doctors
-//        val recyclerView: RecyclerView = findViewById(R.id.doctor_list)
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//        recyclerView.adapter = DoctorAdapter(doctorsList)
-
         // Set up RecyclerView for top doctors
         recyclerView = findViewById(R.id.doctor_list)  // Assuming you have a RecyclerView with this id in your layout
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -59,42 +53,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // Set up bottom navigation
-//        val bottomNavigationView: BottomNavigationView = findViewById(R.id.mobile_navigation)
-//        bottomNavigationView.setOnItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.navigation_home -> {
-//                    // Handle Home action
-//                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-//                    true
-//                }
-////                change to nav calendar
-//                R.id.navigation_appointment -> {
-//                    // Handle Calendar action
-//                    Toast.makeText(this, "Appointments", Toast.LENGTH_SHORT).show()
-//                    true
-//                }
-////                change to nav_profile
-//                R.id.navigation_notifications -> {
-//                    // Handle Profile action
-//                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
-
-
     }
     private fun getDoctorsList(): List<Doctor> {
         // Here, you'd typically fetch your data from a database or an API
         return listOf(
-            Doctor("Dr. Ochieng Oloo", "Surgeon", "10:30 AM - 3:30 PM", 4.9, "Ksh 1500"),
-            Doctor("Dr. Gwen Amanda", "Physiologist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1200"),
-            Doctor("Dr. Mjumbe Carlton", "Dentist", "10:30 AM - 3:30 PM", 4.5, "Ksh 1200"),
-            Doctor("Dr. Fedha Santana", "Orthopedic", "10:30 AM - 3:30 PM", 5.0, "Ksh 1700"),
-            Doctor("Dr. Ratemo Ernest", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.4, "Ksh 1000"),
-            Doctor("Dr. Alina Abdi", "Nutritionist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1300")
+            Doctor("Dr. Ochieng Oloo", "Surgeon", "10:30 AM - 3:30 PM", 4.9, "Ksh 1500", R.drawable.ochieng),
+            Doctor("Dr. Gwen Amanda", "Physiologist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1200", R.drawable.gwen),
+            Doctor("Dr. Mjumbe Carlton", "Dentist", "10:30 AM - 3:30 PM", 4.5, "Ksh 1200", R.drawable.mjumbe),
+            Doctor("Dr. Fedha Santana", "Orthopedic", "10:30 AM - 3:30 PM", 5.0, "Ksh 1700" , R.drawable.fedha),
+            Doctor("Dr. Ratemo Ernest", "Senior Surgeon", "10:30 AM - 3:30 PM", 4.4, "Ksh 1000", R.drawable.ratemo),
+            Doctor("Dr. Alina Abdi", "Nutritionist", "10:30 AM - 3:30 PM", 5.0, "Ksh 1300", R.drawable.alina)
         )
     }
 }

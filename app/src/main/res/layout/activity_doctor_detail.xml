@@ -8,20 +8,25 @@
     tools:context=".DoctorDetailActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <!-- Doctor Image -->
             <ImageView
                 android:id="@+id/doctor_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="300dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_profile_placeholder" />
 
@@ -41,7 +46,23 @@
                 android:id="@+id/doctor_specialization"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cardiologist and Surgeon"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/doctor_timing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+            <TextView
+                android:id="@+id/doctor_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:textSize="16sp"
                 android:gravity="center"
                 android:layout_marginTop="4dp" />
@@ -58,7 +79,6 @@
                     android:id="@+id/doctor_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.9"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -104,16 +124,29 @@
                 android:layout_marginTop="8dp" />
 
             <!-- Book Appointment Button -->
-            <Button
-                android:id="@+id/book_appointment_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Book Appointment"
-                android:textStyle="bold"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="?attr/colorPrimary" />
-        </LinearLayout>
-    </ScrollView>
 
+        </LinearLayout>
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/book_appointment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="Book Appointment"
+            android:textStyle="bold"
+
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

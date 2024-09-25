@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context=".AppointmentBookingActivity">
+
+    <!-- Doctor's Profile Image -->
+    <ImageView
+        android:id="@+id/doctor_image"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/doctor_info_card"/>
+
+    <!-- Doctor Information Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/doctor_info_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/appointment_days_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doctor_image">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Ali Uzair"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/doctor_specialization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senior Cardiologist and Surgeon"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/doctor_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mirpur Medical College and Hospital"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Appointment Days -->
+    <LinearLayout
+        android:id="@+id/appointment_days_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/doctor_info_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Example Day -->
+        <TextView
+            android:id="@+id/day_sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/day_selector_background"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Sun\n3"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <!-- Add more days similarly -->
+        <TextView
+            android:id="@+id/day_mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Mon\n4"
+            android:textAlignment="center"
+            android:textColor="#757575"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/day_tue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/day_selector_selected"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Tue\n5"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/day_wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/day_selector_selected"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Wed\n5"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/day_thur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/day_selector_selected"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Thur\n5"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/day_fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/day_selector_selected"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Fri\n5"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <!-- Add more days... -->
+    </LinearLayout>
+
+    <!-- Available Time Slots -->
+    <LinearLayout
+        android:id="@+id/available_time_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/appointment_days_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Example Time Slot -->
+        <TextView
+            android:id="@+id/time_slot_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/time_slot_selected"
+            android:padding="8dp"
+            android:text="9:00 AM"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <!-- More time slots can be added similarly -->
+        <TextView
+            android:id="@+id/time_slot_930"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/time_slot_unavailable"
+            android:padding="8dp"
+            android:text="9:30 AM"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Confirm Button -->
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Confirm"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/available_time_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,5 +5,6 @@ data class Doctor(
     val specialization: String,
     val timing: String,
     val rating: Double,
-    val fee: String
+    val fee: String,
+    val imageResId: Int
 )

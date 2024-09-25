@@ -5,8 +5,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class DoctorAdapter(private val context: Context,private val doctors: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
 
@@ -16,6 +18,7 @@ class DoctorAdapter(private val context: Context,private val doctors: List<Docto
         val timingTextView: TextView = itemView.findViewById(R.id.doctor_schedule)
         val ratingTextView: TextView = itemView.findViewById(R.id.doctor_rating)
         val feeTextView: TextView = itemView.findViewById(R.id.doctor_fee)
+        val image: ImageView = itemView.findViewById(R.id.doctor_image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoctorViewHolder {
@@ -30,9 +33,13 @@ class DoctorAdapter(private val context: Context,private val doctors: List<Docto
         holder.timingTextView.text = doctor.timing
         holder.ratingTextView.text = doctor.rating.toString()
         holder.feeTextView.text = doctor.fee
+        Glide.with(holder.itemView.context)
+            .load(doctor.imageResId)
+            .into(holder.image)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DoctorDetailActivity::class.java).apply {
+                putExtra("DOCTOR_IMAGE", doctor.imageResId)
                 putExtra("DOCTOR_NAME", doctor.name)
                 putExtra("DOCTOR_SPECIALIZATION", doctor.specialization)
                 putExtra("DOCTOR_TIMING", doctor.timing)
