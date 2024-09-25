@@ -19,6 +19,7 @@ class AppointmentBookingActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         enableEdgeToEdge()
         setContentView(R.layout.activity_appointment_booking)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.booking)) { v, insets ->
