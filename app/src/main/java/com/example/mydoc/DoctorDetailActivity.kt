@@ -1,5 +1,6 @@
 package com.example.mydoc
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +44,13 @@ class DoctorDetailActivity : AppCompatActivity() {
         binding.doctorRating.text = doctorRating.toString()
         binding.doctorFee.text = doctorFee
 
+        binding.bookAppointmentButton.setOnClickListener {
+            val intent = Intent(this, AppointmentBookingActivity::class.java)
+            intent.putExtra("DOCTOR_IMAGE", doctorImage)
+            intent.putExtra("DOCTOR_NAME", doctorName)
+            intent.putExtra("DOCTOR_SPECIALIZATION", doctorSpecialization)
+            startActivity(intent)
+        }
 
     }
 }
