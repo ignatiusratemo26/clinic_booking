@@ -42,6 +42,7 @@ class DoctorDetailActivity : AppCompatActivity() {
         binding.doctorSpecialization.text = doctorSpecialization
         binding.doctorTiming.text = doctorTiming
         binding.doctorRating.text = doctorRating.toString()
+        binding.doctorRating2.text = doctorRating.toString()
         binding.doctorFee.text = doctorFee
 
         binding.bookAppointmentButton.setOnClickListener {
