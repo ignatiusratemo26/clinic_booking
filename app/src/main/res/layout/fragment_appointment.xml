@@ -22,7 +22,7 @@
         android:id="@+id/appointments_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Appointment"
+        android:text="All Appointments"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -43,39 +43,66 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:gravity="center"
+        android:paddingBottom="12dp"
+
         android:layout_marginBottom="16dp">
 
         <!-- Tab for Complete -->
-        <TextView
-            android:id="@+id/tab_complete"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Complete"
-            android:textColor="@android:color/black"
-            android:padding="8dp"
-            android:background="@color/appointment_tab_background"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/appointment_background"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:id="@+id/tab_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete"
+                android:textColor="@android:color/black"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="8dp" />
+        </com.google.android.material.card.MaterialCardView>
+
 
         <!-- Tab for Upcoming -->
-        <TextView
-            android:id="@+id/tab_upcoming"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upcoming"
-            android:textColor="@android:color/black"
-            android:padding="8dp"
-            android:background="@color/appointment_tab_background"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/appointment_background"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:id="@+id/tab_upcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete"
+                android:textColor="@android:color/black"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="8dp" />
+        </com.google.android.material.card.MaterialCardView>
+
 
         <!-- Tab for Cancelled -->
-        <TextView
-            android:id="@+id/tab_cancelled"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancelled"
-            android:textColor="@android:color/black"
-            android:padding="8dp"
-            android:background="@color/appointment_tab_selected_background" />
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/appointment_tab_selected_background"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:id="@+id/tab_cancelled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="8dp" />
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 
     <!-- RecyclerView for Appointments -->

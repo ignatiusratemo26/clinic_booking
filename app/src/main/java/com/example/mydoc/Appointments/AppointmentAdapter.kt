@@ -1,7 +1,6 @@
 package com.example.mydoc.Appointments
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mydoc.databinding.AppointmentItemBinding
@@ -26,7 +25,7 @@ class AppointmentAdapter(private var appointments: List<Appointment>) :
         holder.binding.doctorName.text = appointment.doctorName
         holder.binding.doctorSpecialization.text = appointment.specialization
         // Load doctor image (can use libraries like Glide or Picasso)
-        // holder.binding.doctorImage.setImageResource(appointment.imageResId)
+        holder.binding.doctorImage.setImageResource(appointment.imageResId)
 
         holder.binding.addReviewButton.setOnClickListener {
             // Handle add review click

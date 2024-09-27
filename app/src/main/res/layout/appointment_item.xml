@@ -6,57 +6,67 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/appointment_background"
     app:cardCornerRadius="20dp">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:orientation="horizontal">
-
-        <!-- Doctor's Image -->
-        <ImageView
-            android:id="@+id/doctor_image"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:scaleType="centerCrop"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/rounded_image_background" />
-
-        <!-- Doctor's Info -->
+        android:orientation="vertical"
+        >
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:padding="16dp"
+            android:orientation="horizontal">
 
-            <!-- Doctor Name -->
-            <TextView
-                android:id="@+id/doctor_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dr. Olivia Turner, M.D."
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
+            <!-- Doctor's Image -->
+            <ImageView
+                android:id="@+id/doctor_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_image_background" />
 
-            <!-- Doctor Specialization -->
-            <TextView
-                android:id="@+id/doctor_specialization"
-                android:layout_width="wrap_content"
+            <!-- Doctor's Info -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Dermato-Endocrinology"
-                android:textSize="14sp"
-                android:textColor="@android:color/darker_gray" />
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!-- Doctor Name -->
+                <TextView
+                    android:id="@+id/doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Olivia Turner, M.D."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimaryVariant" />
+
+                <!-- Doctor Specialization -->
+                <TextView
+                    android:id="@+id/doctor_specialization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dermato-Endocrinology"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
         </LinearLayout>
-
         <!-- Add Review Button -->
         <Button
             android:id="@+id/add_review_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Review"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:backgroundTint="@color/blue" />
+            android:backgroundTint="?attr/colorPrimary"
+            android:paddingHorizontal="50dp"
+            android:layout_gravity="center_horizontal"
+            app:cornerRadius="12dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
