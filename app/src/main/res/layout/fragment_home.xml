@@ -77,7 +77,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="12dp"
         android:contentDescription="Settings"
-        android:src="@drawable/ic_settings"
+        android:src="@drawable/ic_filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,7 +136,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_odontology"
+                    android:src="@drawable/ic_tooth"
                     android:contentDescription="Odontology"
                     app:tint="@color/white"/>
 
@@ -169,7 +169,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_neurology"
+                    android:src="@drawable/ic_brain"
                     android:contentDescription="Neurology"
                     app:tint="@color/white" />
 
@@ -202,7 +202,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_cardiology"
+                    android:src="@drawable/ic_heart"
                     android:contentDescription="Cardiology"
                     app:tint="@color/white"/>
 
