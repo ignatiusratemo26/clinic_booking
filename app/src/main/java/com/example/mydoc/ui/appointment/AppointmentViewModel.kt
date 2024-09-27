@@ -3,11 +3,37 @@ package com.example.mydoc.ui.appointment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.mydoc.Appointments.Appointment
+import com.example.mydoc.repository.MyDocRepository
+import kotlinx.coroutines.launch
+import com.example.mydoc.R
+import com.example.mydoc.network.Resource
 
 class AppointmentViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+
+    private val _appointments = MutableLiveData<Resource<List<Appointment>>>()
+    val appointments: LiveData<Resource<List<Appointment>>> get() = _appointments
+
+    fun fetchAppointments() {
+        _appointments.postValue(Resource.Loading())
+        viewModelScope.launch {
+//            _appointments.postValue(repository.getAppointments())
+        }
     }
-    val text: LiveData<String> = _text
+
+    private val allAppointments = listOf(
+        Appointment("Dr. Ochieng Oloo", "Surgeon",  R.drawable.ochieng),
+        Appointment("Dr. Gwen Amanda", "Physiologist",  R.drawable.gwen),
+        Appointment("Dr. Mjumbe Carlton", "Dentist",  R.drawable.mjumbe),
+        Appointment("Dr. Fedha Santana", "Orthopedic", R.drawable.fedha),
+        Appointment("Dr. Ratemo Ernest", "Senior Surgeon",  R.drawable.ratemo),
+        Appointment("Dr. Alina Abdi", "Nutritionist",  R.drawable.alina)
+    )
+
+    fun getAppointments(status: String): List<Appointment> {
+        // For simplicity, returning the same list for all statuses
+        return allAppointments
+    }
 }
