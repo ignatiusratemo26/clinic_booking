@@ -1,4 +1,4 @@
-package com.example.mydoc
+package com.example.mydoc.Doctors
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.mydoc.DoctorDetailActivity
+import com.example.mydoc.R
 
 class DoctorAdapter(private val context: Context,private val doctors: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
 

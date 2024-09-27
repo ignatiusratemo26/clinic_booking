@@ -8,6 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FF9E9E9E</color>
+    <color name="light_gray">#FFBDBDBD</color>
     <color name="blue">#FF4285F4</color>
     <color name="gold">#FFFFC107</color>
+
+    <color name="appointment_tab_background">#FF9E9E9E</color>
+    <color name="appointment_tab_selected_background">#FF4285F4</color>
+
 </resources>

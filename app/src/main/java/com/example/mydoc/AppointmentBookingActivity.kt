@@ -55,7 +55,7 @@ class AppointmentBookingActivity : AppCompatActivity() {
     }
 
     private fun setupDaySelection(){
-        val days = listOf(binding.daySun, binding.dayMon, binding.dayTue, binding.dayWed, binding.dayThur, binding.dayFri)
+        val days = listOf(binding.timeSlot, binding.timeSlot1)
 
         for (day in days) {
             day.setOnClickListener {
@@ -66,7 +66,7 @@ class AppointmentBookingActivity : AppCompatActivity() {
         }
     }
     private fun setupTimeSelection() {
-        val times = listOf(binding.timeSlot9, binding.timeSlot930 /* Add other time slots */)
+        val times = listOf(binding.timeSlot, binding.timeSlot1 /* Add other time slots */)
 
         for (time in times) {
             time.setOnClickListener {

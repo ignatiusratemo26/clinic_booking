@@ -1,7 +1,6 @@
 package com.example.mydoc
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,7 +10,8 @@ import com.example.mydoc.databinding.ActivityMainBinding
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.mydoc.Doctors.Doctor
+import com.example.mydoc.Doctors.DoctorAdapter
 
 
 class MainActivity : AppCompatActivity() {

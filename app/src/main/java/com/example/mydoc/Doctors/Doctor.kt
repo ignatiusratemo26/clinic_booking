@@ -1,4 +1,4 @@
-package com.example.mydoc
+package com.example.mydoc.Doctors
 
 data class Doctor(
     val name: String,
