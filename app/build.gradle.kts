@@ -73,7 +73,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation("com.google.firebase:firebase-auth:21.0.1")
     implementation("com.google.android.gms:play-services-auth:20.4.1")
-
+    implementation("com.google.firebase:firebase-database:20.1.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
