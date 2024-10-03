@@ -1,5 +1,5 @@
 <resources>
-<!--    Login page -->
+    <!--    Login page -->
     <string name="tv_login_title">Login</string>
     <string name="login_title">Login</string>
 

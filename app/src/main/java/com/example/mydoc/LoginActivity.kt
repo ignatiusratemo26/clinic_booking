@@ -2,6 +2,7 @@ package com.example.mydoc
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -23,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         auth = FirebaseAuth.getInstance()
+        sharedPreferences = getSharedPreferences("mydoc", MODE_PRIVATE)
 
         //configuring google sign in
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -80,7 +83,8 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
-
+                    sharedPreferences.edit().putString("userId", user?.uid).apply()
+//                    sharedPreferences.edit().putString("firebase_token", idToken).apply()
                     //Switch to main activity
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
@@ -99,11 +103,24 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:success")
                     val user = auth.currentUser
+//                    get the firebase token
+                    user?.getIdToken(true)?.addOnCompleteListener { tokenTask ->
+                        if (tokenTask.isSuccessful) {
+                            val idToken = tokenTask.result?.token
+//                            store the token in sharedpreferences
+                            sharedPreferences.edit().putString("firebase_token", idToken).apply()
+                            //Switch to main activity
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Log.w(TAG, "getIdToken:failure", tokenTask.exception)
+                            Toast.makeText(this, "Failed to get token", Toast.LENGTH_SHORT).show()
+                        }
 
-                    //Switch to main activity
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    }
+
+
 
                 } else {
                     Log.w(TAG, "signInWithEmail:failure", task.exception)

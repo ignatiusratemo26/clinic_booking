@@ -67,6 +67,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation("androidx.fragment:fragment-ktx:1.5.5")
     implementation("com.github.bumptech.glide:glide:4.13.0")
+    implementation(libs.play.services.cast.framework)
+    implementation(libs.androidx.runner)
     annotationProcessor("com.github.bumptech.glide:compiler:4.13.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -74,7 +76,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:21.0.1")
     implementation("com.google.android.gms:play-services-auth:20.4.1")
     implementation("com.google.firebase:firebase-database:20.1.0")
-
+    implementation("com.google.firebase:firebase-storage:20.0.0")
+    implementation("com.google.android.gms:play-services-cast-framework:21.0.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

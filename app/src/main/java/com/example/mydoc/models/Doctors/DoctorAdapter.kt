@@ -1,4 +1,4 @@
-package com.example.mydoc.Doctors
+package com.example.mydoc.models.Doctors
 
 import android.content.Context
 import android.content.Intent
@@ -30,21 +30,21 @@ class DoctorAdapter(private val context: Context,private val doctors: List<Docto
 
     override fun onBindViewHolder(holder: DoctorViewHolder, position: Int) {
         val doctor = doctors[position]
-        holder.nameTextView.text = doctor.name
-        holder.specializationTextView.text = doctor.specialization
-        holder.timingTextView.text = doctor.timing
+        holder.nameTextView.text = "$doctor.firstName} ${doctor.lastName}"
+        holder.specializationTextView.text = doctor.specializationId
+        holder.timingTextView.text = "Timing info here"
         holder.ratingTextView.text = doctor.rating.toString()
         holder.feeTextView.text = doctor.fee
         Glide.with(holder.itemView.context)
-            .load(doctor.imageResId)
+            .load(doctor.profileImageUrl)
             .into(holder.image)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DoctorDetailActivity::class.java).apply {
-                putExtra("DOCTOR_IMAGE", doctor.imageResId)
-                putExtra("DOCTOR_NAME", doctor.name)
-                putExtra("DOCTOR_SPECIALIZATION", doctor.specialization)
-                putExtra("DOCTOR_TIMING", doctor.timing)
+                putExtra("DOCTOR_IMAGE", doctor.profileImageUrl)
+                putExtra("DOCTOR_NAME", "${doctor.firstName} ${doctor.lastName}")
+                putExtra("DOCTOR_SPECIALIZATION", doctor.specializationId)
+                putExtra("DOCTOR_BIO", doctor.bio)
                 putExtra("DOCTOR_RATING", doctor.rating)
                 putExtra("DOCTOR_FEE", doctor.fee)
             }

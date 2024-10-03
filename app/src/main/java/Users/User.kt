@@ -4,14 +4,14 @@ import java.util.Date
 
 data class User(
     val id: Int,
-    val first_name: String,
-    val second_name: String,
+    val firstName: String,
+    val secondName: String,
     val email: String,
     val password: String,
-    val date_of_birth: Date,
+    val dateOfBirth: Date,
     val gender: String,
-    val phone_number: String,
+    val phoneNumber: String,
     val address: String,
-    val profile_picture: String,
-    val created_at: Date,
+    val profilePicture: String,
+    val createdAt: Date,
 )
