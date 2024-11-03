@@ -1,4 +1,4 @@
-package com.example.mydoc.Appointments
+package com.example.mydoc.models.Appointments
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

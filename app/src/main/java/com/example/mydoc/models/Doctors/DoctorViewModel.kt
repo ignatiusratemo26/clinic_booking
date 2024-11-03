@@ -1,4 +1,4 @@
-package com.example.mydoc.Doctors
+package com.example.mydoc.models.Doctors
 
 import androidx.lifecycle.*
 import com.example.mydoc.network.Resource

@@ -1,9 +1,10 @@
 package com.example.mydoc.network
 
 
-import com.example.mydoc.Appointments.Appointment
-import com.example.mydoc.Doctors.Doctor
+import com.example.mydoc.models.Appointments.Appointment
+import com.example.mydoc.models.Doctors.Doctor
 import com.example.mydoc.Reviews.Review
+import com.example.mydoc.models.TimeSlots.TimeSlot
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -13,20 +14,24 @@ import retrofit2.http.Path
 interface ApiService {
 
     // Get list of doctors
-    @GET("/doctors")
+    @GET("doctors/")
     suspend fun getDoctors(): Response<List<Doctor>>
 
     // Get doctor details by ID
-    @GET("/doctors/{id}")
+    @GET("doctors/{id}/")
     suspend fun getDoctorDetails(@Path("id") doctorId: String): Response<Doctor>
 
     // Get appointments for a user
-    @GET("/appointments/{userId}")
+    @GET("appointments/{userId}/")
     suspend fun getAppointments(@Path("userId") userId: String): Response<List<Appointment>>
 
     // Create a new appointment
-    @POST("/appointments")
+    @POST("appointments/")
     suspend fun createAppointment(@Body appointment: Appointment): Response<Appointment>
+
+//    Available time slots for a doctor
+    @GET("timeslots/{doctorId}/")
+    suspend fun getAvailableTimeSlots(@Path("doctorId") doctorId: String): Response<List<TimeSlot>>
 
     // Add a review for an appointment
     @POST("/reviews")

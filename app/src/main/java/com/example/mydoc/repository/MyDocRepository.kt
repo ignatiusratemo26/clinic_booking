@@ -1,8 +1,9 @@
 package com.example.mydoc.repository
 
-import com.example.mydoc.Appointments.Appointment
-import com.example.mydoc.Doctors.Doctor
+import com.example.mydoc.models.Appointments.Appointment
+import com.example.mydoc.models.Doctors.Doctor
 import com.example.mydoc.Reviews.Review
+import com.example.mydoc.models.TimeSlots.TimeSlot
 import com.example.mydoc.network.ApiHelper
 import com.example.mydoc.network.Resource
 import kotlinx.coroutines.Dispatchers
@@ -63,6 +64,21 @@ class MyDocRepository(private val apiHelper: ApiHelper) {
                     Resource.Success(response.body()!!)
                 } else {
                     Resource.Error("Failed to create appointment")
+                }
+            } catch (e: Exception) {
+                Resource.Error("Network Error: ${e.message}")
+            }
+        }
+    }
+
+    suspend fun getAvailableTimeSlots(doctorId: String): Resource<List<TimeSlot>> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = apiHelper.getAvailableTimeSlots(doctorId)
+                if (response.isSuccessful) {
+                    Resource.Success(response.body() ?: listOf())
+                } else {
+                    Resource.Error("Failed to fetch time slots")
                 }
             } catch (e: Exception) {
                 Resource.Error("Network Error: ${e.message}")
